@@ -27,6 +27,9 @@ public class MusicConfig extends SettingsClass {
     @Setting.Limitations.FloatLimit(max = 1f, min= -50f, precision = 1f)
     public float focusVolume = -10;
 
+    @Setting(displayName = "Hybrid Music", description = "Automatically switches to the default wynncraft music if there is no music in the current area")
+    public boolean HybridMusicThing = false;
+
     @Override
     public void onSettingChanged(String name) {
         if (!allowMusicModule && Reference.onWorld) MusicManager.getPlayer().stop();
